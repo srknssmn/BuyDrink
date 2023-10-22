@@ -72,13 +72,16 @@
         <img class='chbanner img-fluid w-100' src="/img/coinhunters.png" alt="coinhunters.png" />
     </div>
 
-    <div class="container text-center mt-4">
+    <div class="container text-center mt-4 mb-4">
         <div class="row">
-          <div class="col-8 bg-body-secondary">
-            <section></section>
+          <div class="col-lg-8 bg-body-secondary">
+            <section id="connectSection">
+              <h3><strong>CONNECT YOUR WALLET</strong></h3>
+            </section>
             <section id="donateSection" hidden>
                 <input id="donateSelect" type="number" hidden>
                 <input id="donateValue" type="number" hidden>
+                <h3 class="mt-2"><strong>Select Your Drink</strong></h3>
                 <div id="selectButtons" class="px-2 flex flex-row space-x-4 pt-2">
                     <button id="thanks" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
                       <img src="/img/water.png" alt="">
@@ -105,7 +108,7 @@
                       <img src="/img/dragon.png" alt="">
                     </button>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mt-3 mb-3">
                   <span class="input-group-text"><strong>Donate:</strong></span>
                   <span class="input-group-text"><strong><span id="selectElement">SELECT</span></strong></span>
                   <input id="donateCost" type="text" class="form-control" value="0.000" disabled>
@@ -115,13 +118,48 @@
                     <span class="input-group-text" id="basic-addon1"><strong>Message:</strong></span>
                     <input id="message" type="text" class="form-control" aria-label="Message" placeholder="max. 80" aria-describedby="basic-addon1" maxlength="80" required>
                   </div>
-                  <button id="donateButton" disabled class="mb-4">DONATE</button>
+                  <button id="donateButton" type="button" class="btn btn-outline-primary mb-4" disabled>DONATE</button>
                 </div>
             </section>
           </div>
-          <div class="col-1"></div>
-          <div class="col-3 bg-body-secondary">
-            merhaba
+          <div class="col-lg-1"></div>
+          <div class="col-lg-3 bg-body-secondary">
+            <section id="donorsSection" hidden>
+              <!-- TOP3 DONATERS -->
+              <div class="mt-3 m-1 bg-white p-2">
+                <h3><strong>TOP 3 Donors</strong></h3>
+                <ol>
+                  <li align="left"><h5>0x123....789 <span> - <strong>1.23</strong></span> ETH</h5></li>
+                  <li align="left"><h5>0x123....789 <span> - <strong>1.23</strong></span> ETH</h5></li>
+                  <li align="left"><h5>0x123....789 <span> - <strong>1.23</strong></span> ETH</h5></li>
+                </ol>
+              </div>
+              <!-- LAST DONATERS -->
+              <div class="mt-3 m-1 bg-white p-2">
+                <h3><strong>Recent Donations</strong></h3>
+                <div class="donateDiv bg-body-secondary">
+                  <p align="left"><span><strong>Donate:  </strong></span><span class="text-danger" style="font-size: larger;"><strong>BEER</strong></span></p>
+                  <p align="left" style="margin-top: -0.8rem"><span><strong>Message:  </strong></span><span>
+                    Buradan edebiyat hocamıza sesleniyorum: hocam lütfen bundan sonra aynı anda eleş
+                  </span></p>
+                  <p align="left" style="margin-top: -0.8rem; padding-bottom: 0.2rem;"><span><strong>Wallet:  </strong></span><span>0x123....789</span></p>
+                </div>
+                <div class="donateDiv bg-body-secondary">
+                  <p align="left"><span><strong>Donate:  </strong></span><span class="text-danger" style="font-size: larger;"><strong>BEER</strong></span></p>
+                  <p align="left" style="margin-top: -0.8rem"><span><strong>Message:  </strong></span><span>
+                    Buradan edebiyat hocamıza sesleniyorum: hocam lütfen bundan sonra aynı anda eleş
+                  </span></p>
+                  <p align="left" style="margin-top: -0.8rem; padding-bottom: 0.2rem;"><span><strong>Wallet:  </strong></span><span>0x123....789</span></p>
+                </div>
+                <div class="donateDiv bg-body-secondary">
+                  <p align="left"><span><strong>Donate:  </strong></span><span class="text-danger" style="font-size: larger;"><strong>BEER</strong></span></p>
+                  <p align="left" style="margin-top: -0.8rem"><span><strong>Message:  </strong></span><span>
+                    Buradan edebiyat hocamıza sesleniyorum: hocam lütfen bundan sonra aynı anda eleş
+                  </span></p>
+                  <p align="left" style="margin-top: -0.8rem; padding-bottom: 0.2rem;"><span><strong>Wallet:  </strong></span><span>0x123....789</span></p>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>

@@ -2,6 +2,13 @@
     height: 250px;
 }
 
+.donateDiv {
+  padding-left: 0.5rem;
+  padding-bottom: 0.01px;
+  padding-top: 0.1rem;
+  margin: 0.2rem;
+}
+
 /* MIC&TEXT SELECT SECTION */
 
 .buttonSelect {
@@ -16,7 +23,7 @@
     
   .buttonSelect:active,
   .active {
-    top: 3px;
+    top: 4px;
     left: 1px;
     box-shadow: none;
   }
