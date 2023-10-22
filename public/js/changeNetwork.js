@@ -299,7 +299,7 @@ async function denemFunc(event) {
                     method: 'wallet_switchEthereumChain',
                     params: [{ chainId: sepoliaTestChainId }],
                 });
-                console.log("You have succefully switched to Coinhunters Sepolia Testnet")
+                console.log("You have succefully switched to Sepolia Testnet")
             
             } catch (switchError) {
                 
@@ -327,6 +327,43 @@ async function denemFunc(event) {
                         }
                 }
             }
+        } else if (event.target.dataset.name === "scrollsepolia") {
+            console.log("scroll sepolia Clicked")
+            const scrollSepoliaTestChainId  = await '0x8274f';
+            try {
+            
+                await window.ethereum.request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: scrollSepoliaTestChainId }],
+                });
+                console.log("You have succefully switched to Scroll Sepolia Testnet")
+            
+            } catch (switchError) {
+                
+                // This error code indicates that the chain has not been added to MetaMask.
+                if (switchError.code === 4902) {
+                    console.log("This network is not available in your metamask, please add it")
+    
+                    try {
+                        await window.ethereum.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [
+                            { chainId: '0x8274f', 
+                            chainName:'Scroll Sepolia',
+                            rpcUrls:['https://sepolia-rpc.scroll.io'],
+                            nativeCurrency: {
+                            symbol:'ETH', // 2-6 characters long
+                        decimals: 18
+                        }
+                            
+                            }],
+                        });
+                        } catch (addError) {
+                            // handle "add" error
+                            console.log(addError);
+                        }
+                }
+            }
         } else if (event.target.dataset.name === "ethereum") {
             console.log("etherum Clicked")
             const ethereumId  = await '0x1';
@@ -336,7 +373,7 @@ async function denemFunc(event) {
                     method: 'wallet_switchEthereumChain',
                     params: [{ chainId: ethereumId }],
                 });
-                console.log("You have succefully switched to Coinhunters Sepolia Testnet")
+                console.log("You have succefully switched to Ethereum Mainnet")
             
             } catch (error) {
                console.log(error)

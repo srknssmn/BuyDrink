@@ -1,29 +1,26 @@
-import { DONATE_ADDRESS } from "/constants/address.js";
+import { DONATESCROLL_ADDRESS } from "/constants/address.js";
 import { DONATE_ABI } from "/constants/abi.js";
 import {connectWalletfunc} from "/js/connectWallet.js";
 import {verifyNetwork} from "/js/verifyNetwork.js";
 
 
 let message = document.querySelector('#message')
-document.querySelector("#donateButton").addEventListener('click' , donatefunc)
 
-async function donatefunc(event) {
-    event.preventDefault()
+export const donateScrollFunc = async () => {
+
     
     // get the wallet address from metamask
     const accounts = await ethereum.request({method: 'eth_accounts'});
     if (accounts.length) {
-        await verifyNetwork();
+        // await verifyNetwork();
 
         let donateSelect = await document.querySelector('#donateSelect')
         const donateSelectValue = await donateSelect.value
-        await console.log(donateSelectValue)
         
-        let walletAddress;
         const provider = await new ethers.providers.Web3Provider(window.ethereum);
         // await provider.send("eth_requestAccounts", [])
         const signer = await provider.getSigner();
-        const contract = await new ethers.Contract(DONATE_ADDRESS, DONATE_ABI, signer);
+        const contract = await new ethers.Contract(DONATESCROLL_ADDRESS, DONATE_ABI, signer);
 
         const newMessage = await message.value;
         await console.log(newMessage)
