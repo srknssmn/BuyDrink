@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy a Drink</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-warning" href="https://coinhunterstr.com/" target="_blank">Coinhunters</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Buy us a Drink</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-square-share-nodes"></i> Social Links
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://twitter.com/CoinHuntersTR" target="_blank">X (Twitter)</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/@CoinHuntersTR" target="_blank">Youtube</a></li>
+                    <li><a class="dropdown-item" href="https://t.me/CoinHuntersTR" target="_blank">Telegram</a></li>
+                    <li><a class="dropdown-item" href="https://discord.gg/fpeUxubmD7" target="_blank">Discord</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="https://github.com/CoinHuntersTR" target="_blank">Github</a></li>
+                    <li><a class="dropdown-item" href="https://coinhunterstr.medium.com/" target="_blank">Medium</a></li>
+                </ul>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <div class="btn nav-item dropdown mr-2">
+                <a id="network" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Network
+                </a>
+                <div id="networkChange">
+                    <ul class="dropdown-menu">
+                        <li><button disabled id="currentNetwork" class="dropdown-item" aria-disabled="true">Change Network</button></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><button id="EthereumNetwork" data-name="ethereum" type="button" class="dropdown-item">Ethereum</button></li>
+                        <li><button id="ArbitrumNetwork" data-name="arbitrum" type="button" class="dropdown-item">Arbitrum</button></li>
+                        <li><button id="OptimismNetwork" data-name="optimism" type="button" class="dropdown-item">Optimism</button></li>
+                        <li><button id="BaseNetwork" data-name="base" type="button" class="dropdown-item">Base</button></li>
+                        <li><button id="LineaNetwork" data-name="linea" type="button" class="dropdown-item">Linea</button></li>
+                        <li><button id="ScrollNetwork" data-name="scroll" type="button" class="dropdown-item">Scroll</button></li>
+                        <li><button id="MantaNetwork" data-name="manta" type="button" class="dropdown-item">Manta Pacific</button></li>
+                        <li><button id="DymensionNetwork" data-name="dymension" type="button" class="dropdown-item">Dymension Testnet</button></li>
+                        <li><button id="SepoliaNetwork" data-name="sepolia" type="button" class="dropdown-item">Sepolia Testnet</button></li>
+                    </ul>
+                </div>
+            </div>
+            <button id="connectWallet" class="btn btn-outline-success ml-2" type="button">Connect Wallet</button>
+          </div>
+        </div>
+    </nav>
+
+    <div>
+        <img class='chbanner img-fluid w-100' src="/img/coinhunters.png" alt="coinhunters.png" />
+    </div>
+
+    <div class="container text-center mt-4">
+        <div class="row">
+          <div class="col-8 bg-body-secondary">
+            <section></section>
+            <section id="donateSection" hidden>
+                <input id="donateSelect" type="number" hidden>
+                <input id="donateValue" type="number" hidden>
+                <div id="selectButtons" class="px-2 flex flex-row space-x-4 pt-2">
+                    <button id="thanks" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        THANKS
+                    </button>
+                    <button id="tea" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        TEA
+                    </button>
+                    <button id="coffee" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        COFFEE
+                    </button>
+                    <button id="beer" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        BEER
+                    </button>
+                    <button id="cocktail" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        COCKTAIL
+                    </button>
+                    <button id="whiskey" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        WHISKEY
+                    </button>
+                    <button id="lionmilk" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        LION'S MILK
+                    </button>
+                    <button id="kimiz" type="button" class="buttonSelect w-20 h-20 text-xl rounded-full bg-blue-500 text-white select-button">
+                        KIMIZ
+                    </button>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><strong>Donate:</strong></span>
+                    <input id="donateCost" type="text" class="form-control" aria-label="Donate" aria-describedby="basic-addon1" value="0.000" disabled>
+                </div>
+                <div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><strong>Message:</strong></span>
+                    <input id="message" type="text" class="form-control" aria-label="Message" placeholder="max. 80" aria-describedby="basic-addon1" maxlength="80" required>
+                  </div>
+                  <button id="donateButton" disabled class="mb-4">DONATE</button>
+                </div>
+            </section>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-3 bg-body-secondary">
+            merhaba
+          </div>
+        </div>
+      </div>
+
+
+    <script type="module" src="/js/connectWallet.js"></script>
+    <script type="module" src="/js/detectWallet.js"></script>
+    <script type="module" src="/js/changeNetwork.js"></script>
+    <script type="module" src="/js/donateSelect.js"></script>
+    <script type="module" src="/js/donate.js"></script>
+
+</body>
+</html>
