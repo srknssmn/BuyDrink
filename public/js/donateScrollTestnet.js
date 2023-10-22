@@ -26,42 +26,42 @@ export const donateScrollFunc = async () => {
         await console.log(newMessage)
     
         if (donateSelectValue == 1) {
-            const txn = await contract.sentETH1(newMessage, { value: ethers.utils.parseEther("0.0001") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.0001") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 2) {
-            const txn = await contract.sentETH2(newMessage, { value: ethers.utils.parseEther("0.001") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.001") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 3) {
-            const txn = await contract.sentETH3(newMessage, { value: ethers.utils.parseEther("0.002") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.002") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 4) {
-            const txn = await contract.sentETH4(newMessage, { value: ethers.utils.parseEther("0.003") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.003") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 5) {
-            const txn = await contract.sentETH5(newMessage, { value: ethers.utils.parseEther("0.005") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.005") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 6) {
-            const txn = await contract.sentETH6(newMessage, { value: ethers.utils.parseEther("0.01") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.01") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 7) {
-            const txn = await contract.sentETH7(newMessage, { value: ethers.utils.parseEther("0.1") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.1") });
             await txn.wait();
             await console.log("success")
             await location.reload();
         } else if (donateSelectValue == 8) {
-            const txn = await contract.sentETH8(newMessage, { value: ethers.utils.parseEther("1") });
+            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("1") });
             await txn.wait();
             await console.log("success")
             await location.reload();
