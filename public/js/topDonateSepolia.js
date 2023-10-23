@@ -17,7 +17,4 @@ export const topDonateAndDonorSepolia = async () => {
     let last = topDonor.slice(-4)
     donorWalletSepolia.innerHTML = await first + "..." + last
     topDonateValueSepolia.innerHTML = await topDonateSet;
-
-    await console.log(topDonateValue)
-    await console.log(topDonor)
 };
