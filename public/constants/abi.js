@@ -61,6 +61,40 @@ export const DONATE_ABI = [
     {
         "inputs": [
             {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "allDonates",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "donater",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+            },
+            {
+                "internalType": "string",
+                "name": "message",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "internalType": "address",
                 "name": "_address",
                 "type": "address"
@@ -69,25 +103,6 @@ export const DONATE_ABI = [
         "name": "changeDonationOwner",
         "outputs": [],
         "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "donaterLocation",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -104,72 +119,43 @@ export const DONATE_ABI = [
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "getAllDonaters",
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "donorLocation",
         "outputs": [
             {
-                "components": [
-                    {
-                        "internalType": "address",
-                        "name": "donater",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "totalDonate",
-                        "type": "uint256"
-                    }
-                ],
-                "internalType": "struct Donate.Donater[]",
+                "internalType": "uint256",
                 "name": "",
-                "type": "tuple[]"
+                "type": "uint256"
             }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "getAllDonates",
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "donors",
         "outputs": [
             {
-                "components": [
-                    {
-                        "components": [
-                            {
-                                "internalType": "address",
-                                "name": "donater",
-                                "type": "address"
-                            },
-                            {
-                                "internalType": "uint256",
-                                "name": "totalDonate",
-                                "type": "uint256"
-                            }
-                        ],
-                        "internalType": "struct Donate.Donater",
-                        "name": "donater",
-                        "type": "tuple"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "value",
-                        "type": "uint256"
-                    },
-                    {
-                        "internalType": "string",
-                        "name": "message",
-                        "type": "string"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "timestamp",
-                        "type": "uint256"
-                    }
-                ],
-                "internalType": "struct Donate.NewDonate[]",
-                "name": "",
-                "type": "tuple[]"
+                "internalType": "address",
+                "name": "donor",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
             }
         ],
         "stateMutability": "view",
@@ -210,6 +196,92 @@ export const DONATE_ABI = [
     },
     {
         "inputs": [],
+        "name": "showDonatesArray",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "donater",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "message",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct Donate.NewDonate[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "showDonorsArray",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "donor",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct Donate.Donor[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonate",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonor",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
         "name": "totalDonate",
         "outputs": [
             {
@@ -223,7 +295,7 @@ export const DONATE_ABI = [
     },
     {
         "inputs": [],
-        "name": "totalDonaters",
+        "name": "totalDonors",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -263,21 +335,9 @@ export const DONATE_ABI = [
         "name": "userDonates",
         "outputs": [
             {
-                "components": [
-                    {
-                        "internalType": "address",
-                        "name": "donater",
-                        "type": "address"
-                    },
-                    {
-                        "internalType": "uint256",
-                        "name": "totalDonate",
-                        "type": "uint256"
-                    }
-                ],
-                "internalType": "struct Donate.Donater",
+                "internalType": "address",
                 "name": "donater",
-                "type": "tuple"
+                "type": "address"
             },
             {
                 "internalType": "uint256",

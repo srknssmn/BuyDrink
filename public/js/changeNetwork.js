@@ -22,7 +22,7 @@ async function denemFunc(event) {
                     params: [{ chainId: arbitrumID}],
                 });
                 console.log("You have succefully switched to Arbitrum")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -62,7 +62,7 @@ async function denemFunc(event) {
                     params: [{ chainId: optimismID}],
                 });
                 console.log("You have succefully switched to Optimism Mainnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -103,7 +103,7 @@ async function denemFunc(event) {
                     params: [{ chainId: baseID}],
                 });
                 console.log("You have succefully switched to Base Mainnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -144,7 +144,7 @@ async function denemFunc(event) {
                     params: [{ chainId: lineaID}],
                 });
                 console.log("You have succefully switched to Linea Mainnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -185,7 +185,7 @@ async function denemFunc(event) {
                     params: [{ chainId: scrollID}],
                 });
                 console.log("You have succefully switched to Scroll Mainnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -226,7 +226,7 @@ async function denemFunc(event) {
                     params: [{ chainId: mantaID}],
                 });
                 console.log("You have succefully switched to Manta Pacific")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -263,7 +263,7 @@ async function denemFunc(event) {
                     params: [{ chainId: dymensionRollupID}],
                 });
                 console.log("You have succefully switched to Coinhunters Dymension Rollup")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -300,7 +300,7 @@ async function denemFunc(event) {
                     params: [{ chainId: sepoliaTestChainId }],
                 });
                 console.log("You have succefully switched to Sepolia Testnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -337,7 +337,7 @@ async function denemFunc(event) {
                     params: [{ chainId: scrollSepoliaTestChainId }],
                 });
                 console.log("You have succefully switched to Scroll Sepolia Testnet")
-            
+                await location.reload();
             } catch (switchError) {
                 
                 // This error code indicates that the chain has not been added to MetaMask.
@@ -374,7 +374,7 @@ async function denemFunc(event) {
                     params: [{ chainId: ethereumId }],
                 });
                 console.log("You have succefully switched to Ethereum Mainnet")
-            
+                await location.reload();
             } catch (error) {
                console.log(error)
             }

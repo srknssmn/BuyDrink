@@ -1,11 +1,23 @@
+import {topDonateAndDonorSepolia} from "/js/topDonateSepolia.js";
+import {sepoliaDonatesArray} from "/js/donatesSepolia.js";
+import {topDonateAndDonorScroll} from "/js/topDonateScrollSepolia.js";
+import {scrollSepoliaDonatesArray} from "/js/donatesScrollSepolia.js";
+
 window.onload = (event) => {
     isConnected();
 };
 
 let connectWalletButton = document.querySelector('#connectWallet')
+let connectSection = document.querySelector('#connectSection')
+
 let donateSection = document.querySelector('#donateSection')
 let donorsSection = document.querySelector('#donorsSection')
-let connectSection = document.querySelector('#connectSection')
+let donorsSectionFree = document.querySelector('#donorsSectionFree')
+let donorsSectionSepolia = document.querySelector('#donorsSectionSepolia')
+let donorsSectionScroll = document.querySelector('#donorsSectionScroll')
+let donatesSectionFree = document.querySelector('#donatesSectionFree')
+let donatesSectionSepolia = document.querySelector('#donatesSectionSepolia')
+let donatesSectionScroll = document.querySelector('#donatesSectionScroll')
 
 async function isConnected() {
     const accounts = await ethereum.request({method: 'eth_accounts'});       
@@ -19,10 +31,37 @@ async function isConnected() {
         donateSection.hidden = await false;
         donorsSection.hidden = await false;
         connectSection.hidden = await true;
+
+        const sepoliaTestChainId  = await '0xaa36a7';
+        const scrollSepoliaTestChainId  = await '0x8274f';
+        const chainId = await window.ethereum.request({
+            method: 'eth_chainId',
+        });
+        if (chainId === sepoliaTestChainId) {
+            console.log("Sepolia")
+            donorsSectionFree.hidden = await true;
+            donatesSectionFree.hidden = await true;
+
+            donatesSectionSepolia.hidden = await false;
+            donorsSectionSepolia.hidden = await false;
+            await topDonateAndDonorSepolia();
+            await sepoliaDonatesArray();
+        } else if (chainId === scrollSepoliaTestChainId) {
+            console.log("Scroll Sepolia")
+            donorsSectionFree.hidden = await true;
+            donatesSectionFree.hidden = await true;
+
+            donatesSectionScroll.hidden = await false;
+            donorsSectionScroll.hidden = await false;
+            await topDonateAndDonorScroll();
+            await scrollSepoliaDonatesArray();
+        }
+        
     } else {
         console.log("Metamask is not connected");
         donateSection.hidden = await true;
         donorsSection.hidden = await true;
         connectSection.hidden = await false;
+
     }
 }
