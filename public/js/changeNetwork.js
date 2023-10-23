@@ -43,6 +43,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -83,6 +84,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -124,6 +126,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -165,6 +168,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -206,6 +210,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -247,6 +252,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -284,6 +290,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -321,6 +328,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
@@ -358,6 +366,7 @@ async function denemFunc(event) {
                             
                             }],
                         });
+                        await location.reload();
                         } catch (addError) {
                             // handle "add" error
                             console.log(addError);
