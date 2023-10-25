@@ -49,12 +49,18 @@ export const donateScrollFunc = async () => {
             value_ = await ethers.utils.parseEther("1")
         }
 
-        const txn = await contract.sentETH(newMessage, { value: value_ });
-        await modalButtonOpen.click();
-        await txn.wait();
-        await modalButtonClose.click();
-        await console.log("success")
-        await location.reload();
+        try {
+            const txn = await contract.sentETH(newMessage, { value: value_ });
+            await modalButtonOpen.click();
+            await txn.wait();
+            await modalButtonClose.click();
+            await console.log("success")
+            await location.reload();
+        } catch (error) {
+            if (error.code === "INSUFFICIENT_FUNDS") {
+                await modal2ButtonOpen.click();
+            }
+        }
     } else {
         connectWalletfunc();
     }

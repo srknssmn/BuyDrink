@@ -8,6 +8,7 @@ let message = document.querySelector('#message')
 
 let modalButtonOpen = document.querySelector('#modalButtonOpen')
 let modalButtonClose = document.querySelector('#modalButtonClose')
+let modal2ButtonOpen = document.querySelector('#modal2ButtonOpen')
 
 export const donateSepoliaFunc = async () => {
 
@@ -48,12 +49,20 @@ export const donateSepoliaFunc = async () => {
             value_ = await ethers.utils.parseEther("1")
         }
 
-        const txn = await contract.sentETH(newMessage, { value: value_ });
-        await modalButtonOpen.click();
-        await txn.wait();
-        await modalButtonClose.click();
-        await console.log("success")
-        await location.reload();
+        try {
+            const txn = await contract.sentETH(newMessage, { value: value_ });
+            await modalButtonOpen.click();
+            await txn.wait();
+            await modalButtonClose.click();
+            await console.log("success")
+            await location.reload();
+        } catch (error) {
+            if (error.code === "INSUFFICIENT_FUNDS") {
+                await modal2ButtonOpen.click();
+            }
+        }
+
+
     } else {
         connectWalletfunc();
     }

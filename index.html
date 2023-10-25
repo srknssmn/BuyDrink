@@ -159,7 +159,7 @@
   <div hidden>
     <!-- Button trigger modal -->
     <button id="modalButtonOpen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Launch demo modal
+      Transaction on Road!
     </button>
   </div>
 
@@ -173,7 +173,7 @@
         </div>
         <div class="modal-body">
           <h4>All Done!</h4>
-          <p>You have successfully ordered your drink, thank you</p>
+          <p>You have successfully donated your drink, thank you</p>
         </div>
         <div class="modal-footer">
           <button id="modalButtonClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok, Close</button>
@@ -182,6 +182,31 @@
     </div>
   </div>
 
+  <div hidden>
+    <!-- Button trigger modal -->
+    <button id="modal2ButtonOpen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+      Error
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModal2Label">ERROR</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>INSUFFICIENT FUNDS!</h4>
+          <p>Transfer Ethereum to your wallet or donate a cheaper drink</p>
+        </div>
+        <div class="modal-footer">
+          <button id="modal2ButtonClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <script type="module" src="/js/connectWallet.js"></script>
     <script type="module" src="/js/detectWallet.js"></script>
