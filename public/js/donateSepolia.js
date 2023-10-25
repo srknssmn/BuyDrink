@@ -2,7 +2,7 @@ import { DONATE_ADDRESS } from "/constants/address.js";
 import { DONATE_ABI } from "/constants/abi.js";
 import {connectWalletfunc} from "/js/connectWallet.js";
 import {verifyNetwork} from "/js/verifyNetwork.js";
-
+import {confettiFunc} from "/js/confetti.js"
 
 let message = document.querySelector('#message')
 
@@ -51,7 +51,10 @@ export const donateSepoliaFunc = async () => {
 
         try {
             const txn = await contract.sentETH(newMessage, { value: value_ });
-            await modalButtonOpen.click();
+            await confettiFunc();
+            setTimeout(() => {
+                modalButtonOpen.click();
+            }, 2000);
             await txn.wait();
             await modalButtonClose.click();
             await console.log("success")
