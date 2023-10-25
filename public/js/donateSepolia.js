@@ -6,6 +6,9 @@ import {verifyNetwork} from "/js/verifyNetwork.js";
 
 let message = document.querySelector('#message')
 
+let modalButtonOpen = document.querySelector('#modalButtonOpen')
+let modalButtonClose = document.querySelector('#modalButtonClose')
+
 export const donateSepoliaFunc = async () => {
 
     
@@ -24,48 +27,33 @@ export const donateSepoliaFunc = async () => {
 
         const newMessage = await message.value;
         await console.log(newMessage)
+        let value_;
     
         if (donateSelectValue == 1) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.0001") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.0001")
         } else if (donateSelectValue == 2) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.001") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.001")
         } else if (donateSelectValue == 3) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.002") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.002")
         } else if (donateSelectValue == 4) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.003") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.003")
         } else if (donateSelectValue == 5) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.005") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.005")
         } else if (donateSelectValue == 6) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.01") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.01")
         } else if (donateSelectValue == 7) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("0.1") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("0.1")
+
         } else if (donateSelectValue == 8) {
-            const txn = await contract.sentETH(newMessage, { value: ethers.utils.parseEther("1") });
-            await txn.wait();
-            await console.log("success")
-            await location.reload();
+            value_ = await ethers.utils.parseEther("1")
         }
+
+        const txn = await contract.sentETH(newMessage, { value: value_ });
+        await modalButtonOpen.click();
+        await txn.wait();
+        await modalButtonClose.click();
+        await console.log("success")
+        await location.reload();
     } else {
         connectWalletfunc();
     }
