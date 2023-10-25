@@ -8,6 +8,7 @@ let message = document.querySelector('#message')
 
 let modalButtonOpen = document.querySelector('#modalButtonOpen')
 let modalButtonClose = document.querySelector('#modalButtonClose')
+let modal2ButtonOpen = document.querySelector('#modal2ButtonOpen')
 
 export const donateScrollFunc = async () => {
 
