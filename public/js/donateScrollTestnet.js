@@ -59,7 +59,7 @@ export const donateScrollFunc = async () => {
             await location.reload();
         } catch (error) {
             await console.log(error.code)
-            if ((error.code === "INSUFFICIENT_FUNDS") || (error.code === -32603)) {
+            if ((error.code === "INSUFFICIENT_FUNDS") || (error.code === -32603) || (error.code === -32000)) {
                 await modal2ButtonOpen.click();
             }
         }

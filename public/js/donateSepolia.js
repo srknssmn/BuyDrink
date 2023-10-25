@@ -57,7 +57,7 @@ export const donateSepoliaFunc = async () => {
             await console.log("success")
             await location.reload();
         } catch (error) {
-            if ((error.code === "INSUFFICIENT_FUNDS") || (error.code === -32603)) {
+            if ((error.code === "INSUFFICIENT_FUNDS") || (error.code === -32603) || (error.code === -32000)) {
                 await modal2ButtonOpen.click();
             }
         }
