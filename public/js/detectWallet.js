@@ -1,7 +1,9 @@
 import {topDonateAndDonorSepolia} from "/js/topDonateSepolia.js";
 import {sepoliaDonatesArray} from "/js/donatesSepolia.js";
+import {sepoliaBuyersArray} from "/js/topBuyersSepolia.js";
 import {topDonateAndDonorScroll} from "/js/topDonateScrollSepolia.js";
 import {scrollSepoliaDonatesArray} from "/js/donatesScrollSepolia.js";
+import {scrollSepoliaBuyersArray} from "/js/topBuyersScrollSepolia.js";
 
 window.onload = (event) => {
     isConnected();
@@ -46,6 +48,7 @@ async function isConnected() {
             donorsSectionSepolia.hidden = await false;
             await topDonateAndDonorSepolia();
             await sepoliaDonatesArray();
+            await sepoliaBuyersArray();
         } else if (chainId === scrollSepoliaTestChainId) {
             console.log("Scroll Sepolia")
             donorsSectionFree.hidden = await true;
@@ -55,6 +58,7 @@ async function isConnected() {
             donorsSectionScroll.hidden = await false;
             await topDonateAndDonorScroll();
             await scrollSepoliaDonatesArray();
+            await scrollSepoliaBuyersArray();
         }
         
     } else {

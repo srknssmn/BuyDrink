@@ -13,8 +13,6 @@ export const sepoliaDonatesArray = async () => {
     let newdonatesArray = await [...donatesArray]
     let sorteddonatesArray = await newdonatesArray.sort((a, b) => (b.timestamp) - (a.timestamp));
 
-    await console.log(sorteddonatesArray)
-
     for (let i = 0 ; i < sorteddonatesArray.length ; i++ ) {
         if (i < 3) {
 
