@@ -50,4 +50,23 @@ buttonSelects.forEach(button => {
         donateButton.disabled = false;
       }
     });
-  });
+});
+
+let message = document.querySelector('#message')
+let messageSelect = document.querySelector('#messageSelect')
+
+messageSelect.addEventListener('click', messageSelectFunc)
+
+function messageSelectFunc() {
+  if(messageSelect.value == 1) {
+    message.value = "Thanks"
+  } else if (messageSelect.value == 2) {
+    message.value = "Cheers"
+  } else if (messageSelect.value == 3) {
+    message.value = "Congratulations"
+  } else if (messageSelect.value == 4) {
+    message.value = "Enjoy your drink"
+  } else if (messageSelect.value == 5) {
+    message.value = "Keep building"
+  }
+}

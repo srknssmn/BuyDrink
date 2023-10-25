@@ -12,7 +12,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand text-warning" href="https://coinhunterstr.com/" target="_blank">Coinhunters</a>
+        <a class="navbar-brand text-warning" href="https://coinhunterstr.com/" style="font-weight: 600;" target="_blank">Coinhunters</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -109,9 +109,19 @@
               <div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><strong>Message:</strong></span>
-                  <input id="message" type="text" class="form-control" aria-label="Message" placeholder="max. 100 character" aria-describedby="basic-addon1" maxlength="100" required>
+                  <input id="message" type="text" class="form-control" placeholder="max. 100 character" maxlength="100" required>
+                  <span class="input-group-text">
+                    <select id="messageSelect" class="form-select" aria-label="Default select example">
+                      <option selected>You can choose from ready messages</option>
+                      <option value="1">Thanks</option>
+                      <option value="2">Cheers</option>
+                      <option value="3">Congratulations</option>
+                      <option value="4">Enjoy your drink</option>
+                      <option value="5">Keep building</option>
+                    </select>
+                  </span>
                 </div>
-                <p align="left" style="margin-top: -10px; margin-left: 4px;">Blockchain gas fee may increase depending on the number of characters in your message.</p>
+                <p align="left" style="margin-top: -10px; margin-left: 4px;">Network gas fee may increase depending on the number of characters in your message.</p>
                 <button id="donateButton" type="button" class="btn btn-outline-primary mb-4" disabled>DONATE</button>
               </div>
           </section>
