@@ -1,4 +1,4 @@
-import { DONATE_ADDRESS } from "/constants/address.js";
+import { DONATEMANTA_ADDRESS } from "/constants/address.js";
 import { DONATE_ABI } from "/constants/abi.js";
 import {connectWalletfunc} from "/js/connectWallet.js";
 import {verifyNetwork} from "/js/verifyNetwork.js";
@@ -10,7 +10,7 @@ let modalButtonOpen = document.querySelector('#modalButtonOpen')
 let modalButtonClose = document.querySelector('#modalButtonClose')
 let modal2ButtonOpen = document.querySelector('#modal2ButtonOpen')
 
-export const donateSepoliaFunc = async () => {
+export const donateMantaFunc = async () => {
 
     
     // get the wallet address from metamask
@@ -24,7 +24,7 @@ export const donateSepoliaFunc = async () => {
         const provider = await new ethers.providers.Web3Provider(window.ethereum);
         // await provider.send("eth_requestAccounts", [])
         const signer = await provider.getSigner();
-        const contract = await new ethers.Contract(DONATE_ADDRESS, DONATE_ABI, signer);
+        const contract = await new ethers.Contract(DONATEMANTA_ADDRESS, DONATE_ABI, signer);
 
         const newMessage = await message.value;
         let value_;
@@ -54,11 +54,6 @@ export const donateSepoliaFunc = async () => {
             setTimeout(() => {
                 modalButtonOpen.click();
             }, 2000);
-            // contract.on("Transfer", (from, to, _amount, event) => {
-            //     const amount = formatEther(_amount, 18)
-            //     console.log(`${ from } => ${ to }: ${ amount }`);
-            //     event.removeListener();
-            //   });
             await txn.wait();
             await modalButtonClose.click();
             await console.log("success")

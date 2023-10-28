@@ -27,8 +27,6 @@ export const donateScrollFunc = async () => {
         const contract = await new ethers.Contract(DONATESCROLL_ADDRESS, DONATE_ABI, signer);
 
         const newMessage = await message.value;
-        await console.log(newMessage)
-
         let value_;
     
         if (donateSelectValue == 1) {
@@ -61,9 +59,11 @@ export const donateScrollFunc = async () => {
             await console.log("success")
             await location.reload();
         } catch (error) {
-            await console.log(error.code)
-            if ((error.code === "INSUFFICIENT_FUNDS") || (error.code === -32603) || (error.code === -32000)) {
+            if (error.data.code === -32000) {
                 await modal2ButtonOpen.click();
+            }
+            if (error.data.code === 3) {
+                await window.alert("Message is too long!")
             }
         }
     } else {

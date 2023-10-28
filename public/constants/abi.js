@@ -255,8 +255,87 @@ export const DONATE_ABI = [
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_address",
+                "type": "address"
+            }
+        ],
+        "name": "showDonorsDonates",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "donater",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "value",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "message",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct Donate.NewDonate[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [],
-        "name": "topDonate",
+        "name": "showTopDonates",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "top1",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donate1",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "top2",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donate2",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "top3",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "donate3",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonate1",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -269,7 +348,59 @@ export const DONATE_ABI = [
     },
     {
         "inputs": [],
-        "name": "topDonor",
+        "name": "topDonate2",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonate3",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonor1",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonor2",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "topDonor3",
         "outputs": [
             {
                 "internalType": "address",

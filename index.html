@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  
+  <!-- Navbar-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand text-warning" href="https://coinhunterstr.com/" style="font-weight: 600;" target="_blank">Coinhunters</a>
@@ -47,13 +49,11 @@
                       <li><button id="EthereumNetwork" data-name="ethereum" type="button" class="dropdown-item">Ethereum</button></li>
                       <li><button id="ArbitrumNetwork" data-name="arbitrum" type="button" class="dropdown-item">Arbitrum</button></li>
                       <li><button id="OptimismNetwork" data-name="optimism" type="button" class="dropdown-item">Optimism</button></li>
+                      <li><button id="MantaNetwork" data-name="manta" type="button" class="dropdown-item">Manta Pacific</button></li>
                       <li><button id="BaseNetwork" data-name="base" type="button" class="dropdown-item">Base</button></li>
                       <li><button id="LineaNetwork" data-name="linea" type="button" class="dropdown-item">Linea</button></li>
                       <li><button id="ScrollNetwork" data-name="scroll" type="button" class="dropdown-item">Scroll</button></li>
-                      <li><button id="MantaNetwork" data-name="manta" type="button" class="dropdown-item">Manta Pacific</button></li>
-                      <li><button id="DymensionNetwork" data-name="dymension" type="button" class="dropdown-item">Dymension Testnet</button></li>
                       <li><button id="SepoliaNetwork" data-name="sepolia" type="button" class="dropdown-item">Sepolia Testnet</button></li>
-                      <li><button id="ScrollSepoliaNetwork" data-name="scrollsepolia" type="button" class="dropdown-item">Scroll Sepolia Testnet</button></li>
                   </ul>
               </div>
           </div>
@@ -61,10 +61,13 @@
         </div>
       </div>
   </nav>
+
+  <!-- Main Image -->
   <div>
       <img class='chbanner img-fluid w-100' src="/img/coinhunters.png" alt="coinhunters.png" />
   </div>
 
+  <!-- MAIN SECTION -->
   <div class="container text-center mt-4 mb-4">
       <div class="row">
         <div class="col-lg-8 bg-body-secondary">
@@ -131,39 +134,56 @@
             <!-- TOP DONOR FREE -->
             <div id="donorsSectionFree" class="mt-3 m-1 bg-white p-2">
               <h4><strong>Top Buyers</strong></h4>
-              <div align="left"><h4><span>0x123...456</span> - <strong><span>0.00</span></strong> ETH</h4></div>
+              <div align="left"><h5><span>0x123...456</span> - <strong><span>0.00</span></strong> ETH</h5></div>
               <div align="left">
-                <h5><span>0x123...456</span> - <strong><span>0.00</span></strong> ETH</h5>
+                <h6><span>0x123...456</span> - <strong><span>0.00</span></strong> ETH</h6>
                 <h6><span>0x123...456</span> - <strong><span>0.00</span></strong> ETH</h6>
               </div>
             </div>
-            <!-- TOP DONOR SCROLL -->
+            <!-- TOP DONOR Manta Pacific -->
+            <div id="donorsSectionManta" class="mt-3 m-1 bg-white p-2" hidden>
+              <h4><strong>Top Buyers (Manta Pacific)</strong></h4>
+              <div align="left"><h5>1: <span id="donorWalletManta1">0x123...456</span> - <strong><span id="topDonateValueManta1">0.00</span></strong> ETH  👑</h5></div>
+              <div align="left"><h6>2: <span id="donorWalletManta2">0x123...456</span> - <strong><span id="topDonateValueManta2">0.00</span></strong> ETH  👑</h6></div>
+              <div align="left"><h6>3: <span id="donorWalletManta3">0x123...456</span> - <strong><span id="topDonateValueManta3">0.00</span></strong> ETH  👑</h6></div>
+            </div>
+            <!-- TOP DONOR Sepolia -->
             <div id="donorsSectionSepolia" class="mt-3 m-1 bg-white p-2" hidden>
               <h4><strong>Top Buyers (Sepolia)</strong></h4>
-              <div align="left"><h5>1: <span id="donorWalletSepolia">0x123...456</span> - <strong><span id="topDonateValueSepolia">0.00</span></strong> ETH  👑</h5></div>
+              <div align="left"><h5>1: <span id="donorWalletSepolia1">0x123...456</span> - <strong><span id="topDonateValueSepolia1">0.00</span></strong> ETH  👑</h5></div>
+              <div align="left"><h6>2: <span id="donorWalletSepolia2">0x123...456</span> - <strong><span id="topDonateValueSepolia2">0.00</span></strong> ETH  👑</h6></div>
+              <div align="left"><h6>3: <span id="donorWalletSepolia3">0x123...456</span> - <strong><span id="topDonateValueSepolia3">0.00</span></strong> ETH  👑</h6></div>
             </div>
-            <!-- TOP DONOR MANTA PACIFIC -->
+            <!-- TOP DONOR Scroll Sepolia -->
             <div id="donorsSectionScroll" class="mt-3 m-1 bg-white p-2" hidden>
               <h4><strong>Top Buyers (Scroll Sepolia)</strong></h4>
-              <div align="left"><h5>1: <span id="donorWalletScroll">0x123...456</span> - <strong><span id="topDonateValueScroll">0.00</span></strong> ETH  👑</h5></div>
+              <div align="left"><h5>1: <span id="donorWalletScroll1">0x123...456</span> - <strong><span id="topDonateValueScroll1">0.00</span></strong> ETH  👑</h5></div>
+              <div align="left"><h6>2: <span id="donorWalletScroll2">0x123...456</span> - <strong><span id="topDonateValueScroll2">0.00</span></strong> ETH  👑</h6></div>
+              <div align="left"><h6>3: <span id="donorWalletScroll3">0x123...456</span> - <strong><span id="topDonateValueScroll3">0.00</span></strong> ETH  👑</h6></div>
             </div>
             <!-- LAST DONATES FREE -->
             <div id="donatesSectionFree" class="mt-3 m-1 bg-white p-2">
               <h4><strong>Recent Donations</strong></h4>
             </div>
-            <!-- LAST DONATES SCROLL -->
+            <!-- LAST DONATES Sepolia -->
             <div id="donatesSectionSepolia" class="mt-3 m-1 bg-white p-2" hidden>
               <h4><strong>Recent Donations (Sepolia)</strong></h4>
             </div>
-            <!-- LAST DONATES MANTA PACIFIC -->
+            <!-- LAST DONATES Scroll Sepolia -->
             <div id="donatesSectionScroll" class="mt-3 m-1 bg-white p-2" hidden>
               <h4><strong>Recent Donations (Scroll Sepolia)</strong></h4>
+            </div>
+            <!-- LAST DONATES Manta Pacific -->
+            <div id="donatesSectionManta" class="mt-3 m-1 bg-white p-2" hidden>
+              <h4><strong>Recent Donations</strong></h4>
+              <h4 style="margin-top: -8px;"><strong>(Manta Pacific)</strong></h4>
             </div>
           </section>
         </div>
       </div>
   </div>
 
+  <!-- Transaction Modal Button -->
   <div hidden>
     <!-- Button trigger modal -->
     <button id="modalButtonOpen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -171,7 +191,7 @@
     </button>
   </div>
 
-  <!-- Modal -->
+  <!-- Transaction Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -190,6 +210,7 @@
     </div>
   </div>
 
+  <!-- Error Modal Button -->
   <div hidden>
     <!-- Button trigger modal -->
     <button id="modal2ButtonOpen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
@@ -197,7 +218,7 @@
     </button>
   </div>
 
-  <!-- Modal -->
+  <!-- Error Modal -->
   <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -211,6 +232,34 @@
         </div>
         <div class="modal-footer">
           <button id="modal2ButtonClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Networks Modal Button -->
+  <div hidden>
+    <!-- Button trigger modal -->
+    <button id="modal3ButtonOpen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+      Welcome
+    </button>
+  </div>
+
+  <!-- Networks Modal -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModal3Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header text-center">
+          <h4 class="text-center" align="center">🤩🤩 Welcome to our platform 🤩🤩</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Manta Pacific Mainnet is Live! 🎉🎉</h2>
+          <p>You can buy us a drink, please press the <strong>Start</strong> button and connect your wallet!</p>
+        </div>
+        <div class="modal-footer">
+          <button id="modal3ButtonClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Start</button>
         </div>
       </div>
     </div>

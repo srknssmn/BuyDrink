@@ -2,6 +2,7 @@ import {connectWalletfunc} from "/js/connectWallet.js";
 import {verifyNetwork} from "/js/verifyNetwork.js";
 import {donateSepoliaFunc} from "/js/donateSepolia.js";
 import {donateScrollFunc} from "/js/donateScrollTestnet.js";
+import {donateMantaFunc} from "/js/donateManta.js";
 
 document.querySelector("#donateButton").addEventListener('click' , checkDonatefunc)
 
@@ -31,7 +32,10 @@ async function checkDonatefunc(event) {
         } else if (chainId === scrollSepoliaTestChainId) {
             await console.log("Scroll Sepolia Network")
             donateScrollFunc();
-        } else {
+        } else if (chainId === mantaID) {
+            await console.log("Manta Pacific Network")
+            donateMantaFunc();
+        }  else {
             window.alert("Change your network!")
         }
 
