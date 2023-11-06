@@ -1,12 +1,9 @@
 import {sepoliaDonatesArray} from "/js/donatesSepolia.js";
-import {scrollSepoliaDonatesArray} from "/js/donatesScrollSepolia.js";
+import {scrollDonatesArray} from "/js/donatesScroll.js";
 import {mantaDonatesArray} from "/js/donatesManta.js";
 import {topDonorsSepolia} from "/js/topDonorsSepolia.js";
-import {topDonorsScrollSepolia} from "/js/topDonorsScrollSepolia.js";
+import {topDonorsScroll} from "/js/topDonorsScroll.js";
 import {topDonorsManta} from "/js/topDonorsManta.js";
-// import {sepoliaBuyersArray} from "/js/topBuyersSepolia.js";
-// import {topDonateAndDonorScroll} from "/js/topDonateScrollSepolia.js";
-// import {scrollSepoliaBuyersArray} from "/js/topBuyersScrollSepolia.js";
 
 window.onload = (event) => {
     isConnected();
@@ -42,7 +39,7 @@ async function isConnected() {
         connectSection.hidden = await true;
 
         const sepoliaTestChainId  = await '0xaa36a7';
-        const scrollSepoliaTestChainId  = await '0x8274f';
+        const scrollID = await '0x82750';
         const mantaID = await '0xa9';
         const chainId = await window.ethereum.request({
             method: 'eth_chainId',
@@ -55,14 +52,14 @@ async function isConnected() {
             donorsSectionSepolia.hidden = await false;
             await topDonorsSepolia();
             await sepoliaDonatesArray();
-        } else if (chainId === scrollSepoliaTestChainId) {
-            console.log("Scroll Sepolia")
+        } else if (chainId === scrollID) {
+            console.log("Scroll")
             donorsSectionFree.hidden = await true;
             donatesSectionFree.hidden = await true;
             donatesSectionScroll.hidden = await false;
             donorsSectionScroll.hidden = await false;
-            await topDonorsScrollSepolia();
-            await scrollSepoliaDonatesArray();
+            await topDonorsScroll();
+            await scrollDonatesArray();
         } else if (chainId === mantaID) {
             console.log("Manta Pacific")
             donorsSectionFree.hidden = await true;

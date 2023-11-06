@@ -10,6 +10,13 @@ let modalButtonOpen = document.querySelector('#modalButtonOpen')
 let modalButtonClose = document.querySelector('#modalButtonClose')
 let modal2ButtonOpen = document.querySelector('#modal2ButtonOpen')
 
+ function playAudio(audio) {
+    return new Promise(res => {
+        audio.play()
+        audio.onended = res
+      }) 
+}
+
 export const donateSepoliaFunc = async () => {
 
     
@@ -50,15 +57,24 @@ export const donateSepoliaFunc = async () => {
 
         try {
             const txn = await contract.sentETH(newMessage, { value: value_ });
+            await playAudio(rocketAudio)
             await confettiFunc();
             setTimeout(() => {
                 modalButtonOpen.click();
             }, 2000);
-            // contract.on("Transfer", (from, to, _amount, event) => {
-            //     const amount = formatEther(_amount, 18)
-            //     console.log(`${ from } => ${ to }: ${ amount }`);
-            //     event.removeListener();
-            //   });
+            // contract.on("NewDonateEvent", (from, value, message, timestamp) => {
+            //     let info = {
+            //         from:  from,
+            //         value: ethers.utils.formatEther(value),
+            //         message: message,
+            //         timestamp: timestamp
+            //     };
+            //     console.log(JSON.stringify(info, null, 4))
+            // });
+            // const listener = (from, value, message, timestamp) => {
+            //     console.log(from, ethers.utils.formatEther(value), message, timestamp)
+            // }
+            // contract.on("NewDonateEvent", listener);
             await txn.wait();
             await modalButtonClose.click();
             await console.log("success")

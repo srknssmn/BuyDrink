@@ -3,7 +3,7 @@ import { DONATE_ABI } from "/constants/abi.js";
 
 let donatesSectionScroll = document.querySelector('#donatesSectionScroll')
 
-export const scrollSepoliaDonatesArray = async () => {
+export const scrollDonatesArray = async () => {
     const provider = await new ethers.providers.Web3Provider(window.ethereum);
     const signer = await provider.getSigner();
     const contract = await new ethers.Contract(DONATESCROLL_ADDRESS, DONATE_ABI, signer);

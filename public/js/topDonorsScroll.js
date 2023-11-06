@@ -8,7 +8,7 @@ let topDonateValueScroll2 = document.querySelector('#topDonateValueScroll2');
 let donorWalletScroll3 = document.querySelector('#donorWalletScroll3');
 let topDonateValueScroll3 = document.querySelector('#topDonateValueScroll3');
 
-export const topDonorsScrollSepolia = async () => {
+export const topDonorsScroll = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(DONATESCROLL_ADDRESS, DONATE_ABI, signer);

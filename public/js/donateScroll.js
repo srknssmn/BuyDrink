@@ -1,4 +1,4 @@
-import { DONATEMANTA_ADDRESS } from "/constants/address.js";
+import { DONATESCROLL_ADDRESS } from "/constants/address.js";
 import { DONATE_ABI } from "/constants/abi.js";
 import {connectWalletfunc} from "/js/connectWallet.js";
 import {verifyNetwork} from "/js/verifyNetwork.js";
@@ -10,6 +10,8 @@ let modalButtonOpen = document.querySelector('#modalButtonOpen')
 let modalButtonClose = document.querySelector('#modalButtonClose')
 let modal2ButtonOpen = document.querySelector('#modal2ButtonOpen')
 
+let rocketAudio = document.querySelector('#rocketAudio')
+
 function playAudio(audio) {
     return new Promise(res=>{
         audio.play()
@@ -17,7 +19,7 @@ function playAudio(audio) {
       }) 
 }
 
-export const donateMantaFunc = async () => {
+export const donateScrollFunc = async () => {
 
     const accounts = await ethereum.request({method: 'eth_accounts'});
     if (accounts.length) {
@@ -28,7 +30,7 @@ export const donateMantaFunc = async () => {
         
         const provider = await new ethers.providers.Web3Provider(window.ethereum);
         const signer = await provider.getSigner();
-        const contract = await new ethers.Contract(DONATEMANTA_ADDRESS, DONATE_ABI, signer);
+        const contract = await new ethers.Contract(DONATESCROLL_ADDRESS, DONATE_ABI, signer);
 
         const newMessage = await message.value;
         let value_;
@@ -56,7 +58,7 @@ export const donateMantaFunc = async () => {
             const txn = await contract.sentETH(newMessage, { value: value_ });
             await playAudio(rocketAudio)
             await confettiFunc();
-
+            
             setTimeout(() => {
                 modalButtonOpen.click();
             }, 2000);
@@ -75,4 +77,5 @@ export const donateMantaFunc = async () => {
     } else {
         connectWalletfunc();
     }
+
 }

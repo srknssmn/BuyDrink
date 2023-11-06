@@ -26,9 +26,9 @@ export const verifyNetwork = async () => {
         
             await window.ethereum.request({
                 method: 'wallet_switchEthereumChain',
-                params: [{ chainId: sepoliaTestChainId}],
+                params: [{ chainId: scrollID}],
             });
-            console.log("You have succefully switched to Sepolia Testnet")
+            console.log("You have succefully switched to Scroll Mainnet")
         
         } catch (switchError) {
                 
@@ -40,11 +40,11 @@ export const verifyNetwork = async () => {
                     await window.ethereum.request({
                         method: 'wallet_addEthereumChain',
                         params: [
-                        { chainId: '0xaa36a7', 
-                        chainName:'Sepolia Testnet',
-                        rpcUrls:['https://sepolia.etherscan.io'],
+                        { chainId: '0x82750', 
+                        chainName:'Scroll',
+                        rpcUrls:['https://rpc.scroll.io'],
                         nativeCurrency: {
-                        symbol:'SepoliaETH', // 2-6 characters long
+                        symbol:'ETH', // 2-6 characters long
                     decimals: 18
                     }
                         
